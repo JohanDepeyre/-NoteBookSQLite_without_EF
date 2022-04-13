@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "xzARB83U2oO1Br+zIWKxPeHsKy238iLUa4BwTdP3DzNt+Vrsmazq5mTX0Lounb03gprP1nphbFacFTB+N3tkmg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\j.depeyre\\source\\repos\\NoteBookSQLite_whitoutEF\\NoteBookSQLite_whitoutEF\\NoteBookSQLite_whitoutEF.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\j.depeyre\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.115.5\\stub.system.data.sqlite.core.netstandard.1.0.115.5.nupkg.sha512",
+    "C:\\Users\\j.depeyre\\.nuget\\packages\\system.data.sqlite.core\\1.0.115.5\\system.data.sqlite.core.1.0.115.5.nupkg.sha512"
+  ],
+  "logs": []
+}
