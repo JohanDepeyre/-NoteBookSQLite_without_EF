@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\j.depeyre\\source\\repos\\NoteBookSQLite_whitoutEF\\NoteBookSQLite_whitoutEF\\NoteBookSQLite_whitoutEF.csproj": {}
+    "C:\\Users\\j.depeyre\\Documents\\ProjetSLAM\\NoteBookSQLite_whitoutEF\\NoteBookSQLite_whitoutEF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\j.depeyre\\source\\repos\\NoteBookSQLite_whitoutEF\\NoteBookSQLite_whitoutEF\\NoteBookSQLite_whitoutEF.csproj": {
+    "C:\\Users\\j.depeyre\\Documents\\ProjetSLAM\\NoteBookSQLite_whitoutEF\\NoteBookSQLite_whitoutEF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\j.depeyre\\source\\repos\\NoteBookSQLite_whitoutEF\\NoteBookSQLite_whitoutEF\\NoteBookSQLite_whitoutEF.csproj",
+        "projectUniqueName": "C:\\Users\\j.depeyre\\Documents\\ProjetSLAM\\NoteBookSQLite_whitoutEF\\NoteBookSQLite_whitoutEF.csproj",
         "projectName": "NoteBookSQLite_whitoutEF",
-        "projectPath": "C:\\Users\\j.depeyre\\source\\repos\\NoteBookSQLite_whitoutEF\\NoteBookSQLite_whitoutEF\\NoteBookSQLite_whitoutEF.csproj",
+        "projectPath": "C:\\Users\\j.depeyre\\Documents\\ProjetSLAM\\NoteBookSQLite_whitoutEF\\NoteBookSQLite_whitoutEF.csproj",
         "packagesPath": "C:\\Users\\j.depeyre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\j.depeyre\\source\\repos\\NoteBookSQLite_whitoutEF\\NoteBookSQLite_whitoutEF\\obj\\",
+        "outputPath": "C:\\Users\\j.depeyre\\Documents\\ProjetSLAM\\NoteBookSQLite_whitoutEF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\j.depeyre\\AppData\\Roaming\\NuGet\\NuGet.Config",

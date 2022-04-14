@@ -24,6 +24,6 @@
             <Image  Stretch="Fill" Source="/images/search-interface-symbol.png" Width="50" Height="50"/>
         </Button>
         <Label Content="Catégorie :" Grid.Column="1" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Bottom" FontSize="30" FontFamily="Corbel"/>
-        <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="214,0,0,0" VerticalAlignment="Bottom" Width="219" FontSize="30"/>
+        <ComboBox x:Name="ComboBoxCategorie" Grid.Column="1" HorizontalAlignment="Left" Margin="214,0,0,0" VerticalAlignment="Bottom" Width="219" FontSize="30" DisplayMemberPath="libelleCategorie" SelectedValuePath="idCategorie"/>
     </Grid>
 </Window>

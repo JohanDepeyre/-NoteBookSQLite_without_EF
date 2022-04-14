@@ -6,58 +6,81 @@ using System.Text;
 
 namespace NoteBookSQLite_whitoutEF.classes
 {
+#pragma warning disable S2326 // Unused type parameters should be removed
     public abstract class NoteBookDao<T>
+#pragma warning restore S2326 // Unused type parameters should be removed
     {
-        private int ExecuteWrite(string query, Dictionary<string, object> args)
-        {
-            int numberOfRowsAffected;
+        //private int ExecuteWrite(string query, Dictionary<string, object> args)
+        //{
+        //    int numberOfRowsAffected;
 
-            //setup the connection to the database
-            using (var con = new SQLiteConnection("Data Source=test.db"))
-            {
-                con.Open();
+            
+        //    using (var con = new SQLiteConnection("Data Source=test.db"))
+        //    {
+        //        con.Open();
 
-                //open a new command
-                using (var cmd = new SQLiteCommand(query, con))
-                {
-                    //set the arguments given in the query
-                    foreach (var pair in args)
-                    {
-                        cmd.Parameters.AddWithValue(pair.Key, pair.Value);
-                    }
+                
+        //        using (var cmd = new SQLiteCommand(query, con))
+        //        {
+                   
+        //            foreach (var pair in args)
+        //            {
+        //                cmd.Parameters.AddWithValue(pair.Key, pair.Value);
+        //            }
 
-                    //execute the query and get the number of row affected
-                    numberOfRowsAffected = cmd.ExecuteNonQuery();
-                }
+                    
+        //            numberOfRowsAffected = cmd.ExecuteNonQuery();
+        //        }
 
-                return numberOfRowsAffected;
-            }
-        }
+        //        return numberOfRowsAffected;
+        //    }
+        //}
         protected DataTable Execute(string query, Dictionary<string, object> args)
         {
             if (string.IsNullOrEmpty(query.Trim()))
                 return null;
 
-            using (var con = new SQLiteConnection("Data Source=test.db"))
+            using var con = new SQLiteConnection("Data Source=test.db");
+            con.Open();
+            using (var cmd = new SQLiteCommand(query, con))
             {
-                con.Open();
-                using (var cmd = new SQLiteCommand(query, con))
+                foreach (KeyValuePair<string, object> entry in args)
                 {
-                    foreach (KeyValuePair<string, object> entry in args)
-                    {
-                        cmd.Parameters.AddWithValue(entry.Key, entry.Value);
-                    }
-
-                    var da = new SQLiteDataAdapter(cmd);
-
-                    var dt = new DataTable();
-                    da.Fill(dt);
-
-                    da.Dispose();
-                    return dt;
+                    cmd.Parameters.AddWithValue(entry.Key, entry.Value);
                 }
+
+                var da = new SQLiteDataAdapter(cmd);
+
+                var dt = new DataTable();
+                da.Fill(dt);
+
+                da.Dispose();
+                return dt;
             }
         }
-        public abstract object find(int id);
+        /// <summary>
+        /// Retourne le contenu entier d'une table 
+        /// </summary>
+        /// <param name="query"> requete SQL </param>
+        /// <returns>Datatable contenant le contenu entier d'une table</returns>
+        protected DataTable Execute(string query)
+        {
+            if (string.IsNullOrEmpty(query.Trim()))
+                return null;
+
+            using var con = new SQLiteConnection("Data Source=notebook.db");
+            con.Open();
+            using var cmd = new SQLiteCommand(query, con);
+
+            var da = new SQLiteDataAdapter(cmd);
+
+            var dt = new DataTable();
+            da.Fill(dt);
+
+            da.Dispose();
+            return dt;
+        }
+        public abstract void Find(int id);
+        public abstract DataTable FindAll();
     }
 }

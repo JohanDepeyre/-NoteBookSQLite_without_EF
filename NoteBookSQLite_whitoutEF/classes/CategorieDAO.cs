@@ -5,9 +5,9 @@ using System.Text;
 
 namespace NoteBookSQLite_whitoutEF.classes
 {
-     class CategorieDAO : NoteBookDao<Categorie>
+     class CategorieDao : NoteBookDao<Categorie>
     {
-        public override object find(int id)
+        public override void Find(int id)
         {
             var query = "SELECT * FROM Categorie WHERE Id = @id";
 
@@ -16,18 +16,20 @@ namespace NoteBookSQLite_whitoutEF.classes
         {"@id", id}
     };
 
-            DataTable dt = base.Execute(query, args);
+            Execute(query, args);
 
-            if (dt == null || dt.Rows.Count == 0)
-            {
-                return null;
-            }
+         
 
-            var categorie = new Categorie(Convert.ToInt32(dt.Rows[0]["idCategorie"]), Convert.ToString(dt.Rows[0]["nomCategorie"]));
-   
-            return categorie;
+           
         }
+        public override DataTable FindAll()
+        {
+            var query = "SELECT * FROM Categorie";
+            _ = new DataTable();
+            DataTable dt = Execute(query);
 
+            return dt;
+        }
     }
 
 }
